@@ -6,7 +6,8 @@ public class LavadoState extends State{
     LavadoState(Lavadora lavadora) {
 
         super(lavadora);
-        lavadora.setTiempoDeEstado(1);
+        lavadora.setPasarsiguienteEstado(false);
+        lavadora.setTiempoDeEstado(10);
         lavadora.setGirando(true);
         lavadora.setRevoluciones(500);
 
@@ -15,8 +16,9 @@ public class LavadoState extends State{
     @Override
     public String lavado() {
 
-        if(lavadora.isPasarsiguienteEstado(new EnjuagueState(lavadora))){
-            System.out.println("termino esta fase....");
+        if(lavadora.isPasarsiguienteEstado()){
+            lavadora.changeState(new EnjuagueState(lavadora));
+            System.out.println("---termino esta fase---");
         }
         return "Estoy en fase de lavado...";
     }

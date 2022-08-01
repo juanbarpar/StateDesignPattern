@@ -5,7 +5,8 @@ public class CentrifugadoState extends State{
 
     CentrifugadoState(Lavadora lavadora) {
         super(lavadora);
-        lavadora.setTiempoDeEstado(3);
+        lavadora.setPasarsiguienteEstado(false);
+        lavadora.setTiempoDeEstado(10);
         lavadora.setGirando(true);
         lavadora.setRevoluciones(1000);
     }
@@ -24,7 +25,7 @@ public class CentrifugadoState extends State{
     public String centrifugado() {
 
 
-        if(lavadora.isPasarsiguienteEstado(new CentrifugadoState(lavadora))) {
+        if(lavadora.isPasarsiguienteEstado()) {
             System.out.println("termino esta fase....");
 
 

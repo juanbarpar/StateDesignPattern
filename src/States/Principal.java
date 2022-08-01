@@ -7,13 +7,15 @@ public class Principal {
         Lavadora lavadora = new Lavadora();
         System.out.println(lavadora.isFuncionando());
 
-
+        int t = 0;
         do {
+
+            System.out.println("Info/ revoluciones: " + lavadora.getRevoluciones() + " Tiempo restante: " + lavadora.getTiempoDeEstado());
             System.out.println(lavadora.getState().lavado());
             System.out.println(lavadora.getState().enjuague());
             System.out.println(lavadora.getState().centrifugado());
-            System.out.println(lavadora.getTiempoDeEstado());
             System.out.println("-----------");
-        }while(lavadora.getTiempoDeEstado()!=3);
+            t++;
+        }while(lavadora.isFuncionando());
     }
 }

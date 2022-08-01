@@ -17,6 +17,7 @@ public class Lavadora {
     public void changeState(State state) {
         this.state=state;
 
+
     }
 
     private int tiempoDeEstado;
@@ -26,7 +27,7 @@ public class Lavadora {
 
     public Lavadora() {
         this.state = new LavadoState(this);
-
+        setGirando(true);
     }
 
     public boolean isGirando() {
@@ -62,13 +63,14 @@ public class Lavadora {
         this.tiempoDeEstado = tiempoDeEstado;
     }
 
-    public boolean isPasarsiguienteEstado(State state) {
+    public boolean isPasarsiguienteEstado() {
 
-        int min_val = 1;
-        int max_val = 10;
-        int randomNum = (int) (Math.random() * ( max_val - min_val ));
 
-        if(randomNum==tiempoDeEstado){
+        tiempoDeEstado --;
+
+
+
+        if(0==tiempoDeEstado){
             setPasarsiguienteEstado(true);
             changeState(state);
 
