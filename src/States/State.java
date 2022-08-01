@@ -1,6 +1,6 @@
 package States;
 
-public abstract class State extends Lavadora{
+public abstract class State{
 
     Lavadora lavadora;
 

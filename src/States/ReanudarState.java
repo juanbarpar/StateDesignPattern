@@ -33,7 +33,7 @@ public class ReanudarState extends State{
     public String reanudar() {
 
 
-            lavadora.changeState();
+
 
         return "Listo para entrar a reanudar";
 

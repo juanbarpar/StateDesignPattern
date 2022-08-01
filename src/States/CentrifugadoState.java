@@ -23,12 +23,16 @@ public class CentrifugadoState extends State{
     @Override
     public String centrifugado() {
 
-        lavadora.setNextState(new PausaState(this));
-        if(isPasarsiguienteEstado()){
-            lavadora.changeState();
+
+        if(lavadora.isPasarsiguienteEstado(new CentrifugadoState(lavadora))) {
+            System.out.println("termino esta fase....");
+
+
+            lavadora.setFuncionando(false);
+
         }
 
-        return "No puedo entrar a fase de centrifugado";
+        return "Estoy en centrifugado";
     }
 
     @Override
